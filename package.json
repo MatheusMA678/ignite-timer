@@ -1,21 +1,24 @@
 {
   "name": "ignite-timer",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
+  "license": "MIT",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "lint": "eslint src --ext .ts,.tsx",
     "preview": "vite preview"
   },
   "dependencies": {
     "@phosphor-icons/react": "^2.0.9",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-router-dom": "^6.11.0",
     "styled-components": "^5.3.10"
   },
   "devDependencies": {
+    "@rocketseat/eslint-config": "^1.2.0",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
     "@types/styled-components": "^5.1.26",

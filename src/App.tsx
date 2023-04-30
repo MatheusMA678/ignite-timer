@@ -1,30 +1,18 @@
-import {
-  Container,
-  Logo,
-  MainHeader,
-  MainHeaderButton,
-  MainHeaderButtonWrapper,
-  TimerContainer,
-} from "./styles/App.styles";
-import { Scroll, Timer } from "@phosphor-icons/react";
+import { ThemeProvider } from "styled-components";
+import { BrowserRouter } from "react-router-dom";
 
-import IgniteLogo from "./assets/logo.svg";
+import { GlobalStyles } from "./styles/global.styles";
+import { AppTheme } from "./styles/theme/defaultTheme";
+import { Router } from "./Router";
 
 export function App() {
   return (
-    <Container>
-      <MainHeader>
-        <Logo src={IgniteLogo} alt="Logo do Ignite" />
-        <MainHeaderButtonWrapper>
-          <MainHeaderButton>
-            <Timer size={28} />
-          </MainHeaderButton>
-          <MainHeaderButton>
-            <Scroll size={28} />
-          </MainHeaderButton>
-        </MainHeaderButtonWrapper>
-      </MainHeader>
-      <TimerContainer />
-    </Container>
+    <ThemeProvider theme={AppTheme}>
+      <BrowserRouter>
+        <Router />
+      </BrowserRouter>
+
+      <GlobalStyles />
+    </ThemeProvider>
   );
 }
