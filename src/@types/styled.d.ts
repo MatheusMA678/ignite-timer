@@ -1,27 +1,33 @@
-import 'styled-components'
+import "styled-components";
 
-declare module 'styled-components' {
+declare module "styled-components" {
   export interface DefaultTheme {
     colors: {
       product: {
-        greenDark: string
-        green: string
-        greenLight: string
-      }
+        green: {
+          700: string;
+          600: string;
+          500: string;
+        };
+      };
       feedback: {
-        redDark: string
-        red: string
-      }
+        red: {
+          600: string;
+          500: string;
+        };
+      };
       base: {
-        grayBg: string
-        grayElements: string
-        grayDivider: string
-        grayPlaceholder: string
-        grayLabel: string
-        grayText: string
-        grayTitle: string
-        white: string
-      }
-    }
+        gray: {
+          700: string;
+          600: string;
+          500: string;
+          400: string;
+          300: string;
+          200: string;
+          100: string;
+        };
+        white: string;
+      };
+    };
   }
 }

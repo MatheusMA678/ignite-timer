@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyles = createGlobalStyle`
   * {
@@ -9,19 +9,7 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    background-color: ${({ theme }) => theme.colors.base.grayBg};
+    background-color: ${({ theme }) => theme.colors.base.gray[700]};
     color: ${({ theme }) => theme.colors.base.white};
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
   }
-
-  button {
-    border: none;
-    background: none;
-    outline: none;
-    color: ${({ theme }) => theme.colors.base.white};
-    cursor: pointer;
-  }
-`
+`;
