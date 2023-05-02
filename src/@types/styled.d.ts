@@ -18,6 +18,7 @@ declare module "styled-components" {
       };
       base: {
         gray: {
+          800: string;
           700: string;
           600: string;
           500: string;
