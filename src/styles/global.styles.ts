@@ -8,8 +8,8 @@ export const GlobalStyles = createGlobalStyle`
   }
   
   body {
-    background-color: ${({ theme }) => theme.colors.base.gray[800]};
-    color: ${({ theme }) => theme.colors.base.white};
+    background-color: ${({ theme }) => theme.colors["gray-800"]};
+    color: ${({ theme }) => theme.colors.white};
     font-family: "Roboto", sans-serif;
     padding: 0 1rem;
 
@@ -21,11 +21,11 @@ export const GlobalStyles = createGlobalStyle`
     }
     
     &::-webkit-scrollbar-track {
-      background: ${(props) => props.theme.colors.base.gray[800]};
+      background: ${(props) => props.theme.colors["gray-800"]};
     }
 
     &::-webkit-scrollbar-thumb {
-      background: ${(props) => props.theme.colors.base.gray[600]};
+      background: ${(props) => props.theme.colors["gray-600"]};
       border-radius: 999px;
     }
   }

@@ -17,18 +17,18 @@ export const HeaderContainer = styled.header`
       justify-content: center;
       align-items: center;
 
-      color: ${({ theme }) => theme.colors.base.gray[100]};
+      color: ${({ theme }) => theme.colors["gray-100"]};
 
       border-top: 3px solid transparent;
       border-bottom: 3px solid transparent;
       transition: 0.2s;
 
       &:hover {
-        border-bottom-color: ${({ theme }) => theme.colors.product.green[500]};
+        border-bottom-color: ${({ theme }) => theme.colors["green-500"]};
       }
 
       &.active {
-        color: ${({ theme }) => theme.colors.product.green[500]};
+        color: ${({ theme }) => theme.colors["green-500"]};
       }
     }
   }

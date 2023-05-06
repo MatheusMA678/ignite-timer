@@ -22,7 +22,7 @@ export const FormContainer = styled.div`
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  color: ${(props) => props.theme.colors.base.gray[100]};
+  color: ${(props) => props.theme.colors["gray-100"]};
   font-size: 1.125rem;
   font-weight: bold;
   flex-wrap: wrap;
@@ -33,20 +33,20 @@ const BaseInput = styled.input`
   height: 2.5rem;
   border: none;
   outline: none;
-  border-bottom: 2px solid ${(props) => props.theme.colors.base.gray[500]};
+  border-bottom: 2px solid ${(props) => props.theme.colors["gray-500"]};
   font-weight: bold;
   font-size: 1.125rem;
   padding: 0 0.5rem;
-  color: ${(props) => props.theme.colors.base.gray[100]};
+  color: ${(props) => props.theme.colors["gray-100"]};
   transition: 0.2s;
 
   &:focus {
     box-shadow: none;
-    border-color: ${(props) => props.theme.colors.product.green[500]};
+    border-color: ${(props) => props.theme.colors["green-500"]};
   }
 
   &::placeholder {
-    color: ${(props) => props.theme.colors.base.gray[500]};
+    color: ${(props) => props.theme.colors["gray-500"]};
   }
 `;
 
@@ -66,13 +66,13 @@ export const CountdownContainer = styled.div`
   font-family: "Roboto Mono", monospace;
   font-size: 10rem;
   line-height: 8rem;
-  color: ${(props) => props.theme.colors.base.gray[100]};
+  color: ${(props) => props.theme.colors["gray-100"]};
 
   display: flex;
   gap: 1rem;
 
   span {
-    background: ${(props) => props.theme.colors.base.gray[500]};
+    background: ${(props) => props.theme.colors["gray-500"]};
     padding: 2rem 1rem;
     border-radius: 0.5rem;
   }
@@ -80,7 +80,7 @@ export const CountdownContainer = styled.div`
 
 export const Separator = styled.div`
   padding: 2rem 0;
-  color: ${(props) => props.theme.colors.product.green[500]};
+  color: ${(props) => props.theme.colors["green-500"]};
 
   width: 4rem;
   overflow: hidden;
@@ -95,8 +95,8 @@ export const StartCountdownButton = styled.button`
   gap: 0.5rem;
   width: 100%;
 
-  background: ${(props) => props.theme.colors.product.green[600]};
-  color: ${(props) => props.theme.colors.base.gray[100]};
+  background: ${(props) => props.theme.colors["green-600"]};
+  color: ${(props) => props.theme.colors["gray-100"]};
   font-weight: bold;
 
   border: none;
@@ -112,6 +112,6 @@ export const StartCountdownButton = styled.button`
   }
 
   &:not(:disabled):hover {
-    background: ${(props) => props.theme.colors.product.green[700]};
+    background: ${(props) => props.theme.colors["green-700"]};
   }
 `;

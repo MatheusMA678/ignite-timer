@@ -7,7 +7,7 @@ export const LayoutContainer = styled.div`
   padding: 2.5rem;
   transition: 0.2s;
 
-  background-color: ${({ theme }) => theme.colors.base.gray[700]};
+  background-color: ${({ theme }) => theme.colors["gray-700"]};
   border-radius: 0.5rem;
 
   display: flex;
