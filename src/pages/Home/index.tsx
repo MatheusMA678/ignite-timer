@@ -1,4 +1,5 @@
 import { Play } from "@phosphor-icons/react";
+
 import {
   CountdownContainer,
   FormContainer,
@@ -11,7 +12,32 @@ import {
 
 export function Home() {
   return (
-    <HomeContainer>
+    <HomeContainer
+      initial={{
+        opacity: 0,
+        x: -50,
+        transition: {
+          duration: 0.4,
+          ease: [0.43, 0.13, 0.23, 0.96],
+        },
+      }}
+      animate={{
+        opacity: 1,
+        x: 0,
+        transition: {
+          duration: 0.4,
+          ease: [0.43, 0.13, 0.23, 0.96],
+        },
+      }}
+      exit={{
+        opacity: 0,
+        x: -50,
+        transition: {
+          duration: 0.4,
+          ease: [0.43, 0.13, 0.23, 0.96],
+        },
+      }}
+    >
       <form>
         <FormContainer>
           <label htmlFor="task">Vou trabalhar em</label>

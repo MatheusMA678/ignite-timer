@@ -1,6 +1,7 @@
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
-export const HistoryContainer = styled.main`
+export const HistoryContainer = styled(motion.main)`
   flex: 1;
   padding: 3.5rem;
 
