@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { motion } from "framer-motion";
+import styled from 'styled-components'
+import { motion } from 'framer-motion'
 
 export const HistoryContainer = styled(motion.main)`
   flex: 1;
@@ -10,9 +10,9 @@ export const HistoryContainer = styled(motion.main)`
 
   h1 {
     font-size: 1.5rem;
-    color: ${(props) => props.theme.colors["gray-100"]};
+    color: ${(props) => props.theme.colors['gray-100']};
   }
-`;
+`
 
 export const HistoryList = styled.div`
   flex: 1;
@@ -25,10 +25,10 @@ export const HistoryList = styled.div`
     min-width: 600px;
 
     th {
-      background-color: ${(props) => props.theme.colors["gray-500"]};
+      background-color: ${(props) => props.theme.colors['gray-500']};
       padding: 1rem;
       text-align: left;
-      color: ${(props) => props.theme.colors["gray-100"]};
+      color: ${(props) => props.theme.colors['gray-100']};
       font-size: 0.875rem;
       line-height: 1.6;
 
@@ -44,8 +44,8 @@ export const HistoryList = styled.div`
     }
 
     td {
-      background-color: ${(props) => props.theme.colors["gray-600"]};
-      border-top: 4px solid ${(props) => props.theme.colors["gray-700"]};
+      background-color: ${(props) => props.theme.colors['gray-600']};
+      border-top: 4px solid ${(props) => props.theme.colors['gray-700']};
       padding: 1rem;
       font-size: 0.875rem;
       line-height: 1.6;
@@ -60,16 +60,16 @@ export const HistoryList = styled.div`
       }
     }
   }
-`;
+`
 
 const STATUS_COLOR = {
-  yellow: "yellow-500",
-  red: "red-500",
-  green: "green-500",
-} as const;
+  yellow: 'yellow-500',
+  red: 'red-500',
+  green: 'green-500',
+} as const
 
 interface StatusProps {
-  statusColor: keyof typeof STATUS_COLOR;
+  statusColor: keyof typeof STATUS_COLOR
 }
 
 export const Status = styled.span<StatusProps>`
@@ -78,11 +78,11 @@ export const Status = styled.span<StatusProps>`
   gap: 0.5rem;
 
   &::before {
-    content: "";
+    content: '';
     width: 0.5rem;
     height: 0.5rem;
     border-radius: 999px;
     background: ${(props) =>
       props.theme.colors[STATUS_COLOR[props.statusColor]]};
   }
-`;
+`

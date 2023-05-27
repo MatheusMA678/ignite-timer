@@ -1,12 +1,12 @@
-import { Routes, Route, useLocation } from "react-router-dom";
-import { AnimatePresence } from "framer-motion";
+import { Routes, Route, useLocation } from 'react-router-dom'
+import { AnimatePresence } from 'framer-motion'
 
-import { Home } from "./pages/Home";
-import { History } from "./pages/History";
-import { DefaultLayout } from "./layout/DefaultLayout";
+import { Home } from './pages/Home'
+import { History } from './pages/History'
+import { DefaultLayout } from './layout/DefaultLayout'
 
 export function Router() {
-  const location = useLocation();
+  const location = useLocation()
 
   return (
     <AnimatePresence mode="wait" initial={false}>
@@ -17,5 +17,5 @@ export function Router() {
         </Route>
       </Routes>
     </AnimatePresence>
-  );
+  )
 }

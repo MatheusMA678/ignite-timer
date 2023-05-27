@@ -1,100 +1,58 @@
-import { HistoryContainer, HistoryList, Status } from "./styles";
-import { v4 as uuid } from "uuid";
+import { HistoryContainer, HistoryList, Status } from './styles'
+import { v4 as uuid } from 'uuid'
 
 interface TableDatasType {
-  id: string;
-  task: string;
-  duration: string;
-  createdAt: string;
-  status: "green" | "yellow" | "red";
+  id: string
+  task: string
+  duration: string
+  createdAt: string
+  status: 'green' | 'yellow' | 'red'
 }
 
 const tableHeads = [
-  { label: "Tarefa" },
-  { label: "Duração" },
-  { label: "Início" },
-  { label: "Status" },
-];
+  { label: 'Tarefa' },
+  { label: 'Duração' },
+  { label: 'Início' },
+  { label: 'Status' },
+]
 
 const tableDatas: TableDatasType[] = [
   {
     id: uuid(),
-    task: "Tarefa 1",
-    duration: "10 minutos",
-    createdAt: "Há 2 dias",
-    status: "green",
+    task: 'Tarefa 1',
+    duration: '10 minutos',
+    createdAt: 'Há 2 dias',
+    status: 'green',
   },
   {
     id: uuid(),
-    task: "Tarefa 2",
-    duration: "40 minutos",
-    createdAt: "Há 1 mês",
-    status: "yellow",
+    task: 'Tarefa 2',
+    duration: '40 minutos',
+    createdAt: 'Há 1 mês',
+    status: 'yellow',
   },
   {
     id: uuid(),
-    task: "Tarefa 3",
-    duration: "20 minutos",
-    createdAt: "Há 5 dias",
-    status: "green",
+    task: 'Tarefa 3',
+    duration: '20 minutos',
+    createdAt: 'Há 5 dias',
+    status: 'green',
   },
   {
     id: uuid(),
-    task: "Tarefa 4",
-    duration: "15 minutos",
-    createdAt: "Há 2 meses",
-    status: "red",
+    task: 'Tarefa 4',
+    duration: '15 minutos',
+    createdAt: 'Há 2 meses',
+    status: 'red',
   },
   {
     id: uuid(),
-    task: "Tarefa 5",
-    duration: "30 minutos",
-    createdAt: "Há 2 meses",
-    status: "red",
+    task: 'Tarefa 5',
+    duration: '30 minutos',
+    createdAt: 'Há 2 meses',
+    status: 'red',
   },
-  {
-    id: uuid(),
-    task: "Tarefa 5",
-    duration: "30 minutos",
-    createdAt: "Há 2 meses",
-    status: "red",
-  },
-  {
-    id: uuid(),
-    task: "Tarefa 5",
-    duration: "30 minutos",
-    createdAt: "Há 2 meses",
-    status: "red",
-  },
-  {
-    id: uuid(),
-    task: "Tarefa 5",
-    duration: "30 minutos",
-    createdAt: "Há 2 meses",
-    status: "red",
-  },
-  {
-    id: uuid(),
-    task: "Tarefa 5",
-    duration: "30 minutos",
-    createdAt: "Há 2 meses",
-    status: "red",
-  },
-  {
-    id: uuid(),
-    task: "Tarefa 5",
-    duration: "30 minutos",
-    createdAt: "Há 2 meses",
-    status: "red",
-  },
-  {
-    id: uuid(),
-    task: "Tarefa 5",
-    duration: "30 minutos",
-    createdAt: "Há 2 meses",
-    status: "red",
-  },
-];
+]
 
 export function History() {
   return (
@@ -102,10 +60,6 @@ export function History() {
       initial={{
         opacity: 0,
         x: 50,
-        transition: {
-          duration: 0.4,
-          ease: [0.43, 0.13, 0.23, 0.96],
-        },
       }}
       animate={{
         opacity: 1,
@@ -131,7 +85,7 @@ export function History() {
           <thead>
             <tr>
               {tableHeads.map((head) => {
-                return <th key={head.label}>{head.label}</th>;
+                return <th key={head.label}>{head.label}</th>
               })}
             </tr>
           </thead>
@@ -144,17 +98,17 @@ export function History() {
                   <td>{data.createdAt}</td>
                   <td>
                     <Status statusColor={data.status}>
-                      {data.status === "green" && "Em Progresso"}
-                      {data.status === "yellow" && "Pendente"}
-                      {data.status === "red" && "Encerrado"}
+                      {data.status === 'green' && 'Concluído'}
+                      {data.status === 'yellow' && 'Em andamento'}
+                      {data.status === 'red' && 'Interrompido'}
                     </Status>
                   </td>
                 </tr>
-              );
+              )
             })}
           </tbody>
         </table>
       </HistoryList>
     </HistoryContainer>
-  );
+  )
 }
