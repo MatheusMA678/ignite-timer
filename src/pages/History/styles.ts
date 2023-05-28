@@ -25,7 +25,7 @@ export const HistoryList = styled.div`
     min-width: 600px;
 
     th {
-      background-color: ${(props) => props.theme.colors['gray-500']};
+      background-color: ${(props) => props.theme.colors['gray-600']};
       padding: 1rem;
       text-align: left;
       color: ${(props) => props.theme.colors['gray-100']};
@@ -44,8 +44,8 @@ export const HistoryList = styled.div`
     }
 
     td {
-      background-color: ${(props) => props.theme.colors['gray-600']};
-      border-top: 4px solid ${(props) => props.theme.colors['gray-700']};
+      background-color: ${(props) => props.theme.colors['gray-700']};
+      border-top: 4px solid ${(props) => props.theme.colors['gray-800']};
       padding: 1rem;
       font-size: 0.875rem;
       line-height: 1.6;
