@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import { HistoryPlaceholderContainer, HistoryPlaceholderLink } from './styles'
 
 export function HistoryPlaceholder() {

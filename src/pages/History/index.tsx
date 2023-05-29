@@ -9,12 +9,6 @@ import { HistoryPlaceholder } from './components/HistoryPlaceholder'
 export function History() {
   const { cycles } = useContext(CyclesContext)
 
-  const cyclesSorted = cycles.sort(
-    (a, b) => new Date(a.startDate).getTime() - new Date(b.startDate).getTime(),
-  )
-
-  console.log(cyclesSorted)
-
   return (
     <HistoryContainer
       initial={{
@@ -52,7 +46,7 @@ export function History() {
               </tr>
             </thead>
             <tbody>
-              {cyclesSorted.map((cycle) => {
+              {cycles.map((cycle) => {
                 return (
                   <tr key={cycle.id}>
                     <td>{cycle.task}</td>
