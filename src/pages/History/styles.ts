@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 export const HistoryContainer = styled(motion.main)`
   flex: 1;
   padding: 3.5rem;
+  overflow: auto;
 
   display: flex;
   flex-direction: column;
@@ -15,8 +16,8 @@ export const HistoryContainer = styled(motion.main)`
 `
 
 export const HistoryList = styled.div`
-  flex: 1;
   overflow: auto;
+  height: 100%;
   margin-top: 2rem;
 
   table {
@@ -25,6 +26,8 @@ export const HistoryList = styled.div`
     min-width: 600px;
 
     th {
+      position: sticky;
+      top: 0;
       background-color: ${(props) => props.theme.colors['gray-600']};
       padding: 1rem;
       text-align: left;

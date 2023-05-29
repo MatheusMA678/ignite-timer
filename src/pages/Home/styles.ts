@@ -17,6 +17,13 @@ export const HomeContainer = styled(motion.main)`
   }
 `
 
+export const CountdownWrapper = styled(motion.div)`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+`
+
 const BaseCountdownButton = styled.button`
   display: flex;
   align-items: center;

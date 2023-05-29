@@ -19,19 +19,19 @@ export const GlobalStyles = createGlobalStyle`
     padding: 0 1rem;
 
     -webkit-font-smoothing: antialiased;
+  }
 
-    &::-webkit-scrollbar {
-      background: none;
-      width: .5rem;
-    }
+  *::-webkit-scrollbar {
+    background: none;
+    width: .5rem;
+  }
     
-    &::-webkit-scrollbar-track {
-      background: ${(props) => props.theme.colors['gray-800']};
-    }
+  *::-webkit-scrollbar-track {
+    background: ${(props) => props.theme.colors['gray-800']};
+  }
 
-    &::-webkit-scrollbar-thumb {
-      background: ${(props) => props.theme.colors['gray-600']};
-      border-radius: 999px;
-    }
+  *::-webkit-scrollbar-thumb {
+    background: ${(props) => props.theme.colors['gray-600']};
+    border-radius: 999px;
   }
 `

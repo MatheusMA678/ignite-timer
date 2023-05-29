@@ -1,6 +1,7 @@
 import styled from 'styled-components'
+import { motion } from 'framer-motion'
 
-export const FormContainer = styled.div`
+export const FormContainer = styled(motion.div)`
   width: 100%;
   display: flex;
   align-items: center;

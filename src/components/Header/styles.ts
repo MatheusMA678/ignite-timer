@@ -5,6 +5,22 @@ export const HeaderContainer = styled.header`
   align-items: center;
   justify-content: space-between;
 
+  div {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+
+    h1 {
+      font-size: 1.2rem;
+      font-weight: normal;
+
+      span {
+        font-weight: bold;
+        color: ${(props) => props.theme.colors.white};
+      }
+    }
+  }
+
   nav {
     display: flex;
     gap: 0.5rem;

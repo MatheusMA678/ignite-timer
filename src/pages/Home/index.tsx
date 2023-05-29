@@ -1,5 +1,6 @@
 import { useContext } from 'react'
 import { HandPalm, Play } from '@phosphor-icons/react'
+import { motion } from 'framer-motion'
 
 import { FormProvider, useForm } from 'react-hook-form'
 import { z } from 'zod'
@@ -10,6 +11,7 @@ import { NewCycleForm } from './components/NewCycleForm'
 import { Countdown } from './components/Countdown'
 
 import {
+  CountdownWrapper,
   HomeContainer,
   StartCountdownButton,
   StopCountdownButton,
@@ -47,6 +49,25 @@ export function Home() {
   const task = watch('task')
   const isSubmitDisabled = !task
 
+  const countdownWrapperVariants = {
+    hide: {
+      y: -10,
+      opacity: 0,
+      transition: {
+        ease: [0.43, 0.13, 0.23, 0.96],
+        duration: 0.5,
+      },
+    },
+    show: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        ease: [0.43, 0.13, 0.23, 0.96],
+        duration: 0.5,
+      },
+    },
+  }
+
   return (
     <HomeContainer
       initial={{
@@ -72,21 +93,41 @@ export function Home() {
     >
       <form onSubmit={handleSubmit(handleCreateNewCycle)}>
         <FormProvider {...newCycleForm}>
-          {!activeCycle && <NewCycleForm />}
+          <NewCycleForm />
         </FormProvider>
-        <Countdown />
 
-        {activeCycle ? (
-          <StopCountdownButton onClick={interruptCurrentCycle} type="button">
-            <HandPalm size={24} />
-            Interromper
-          </StopCountdownButton>
-        ) : (
-          <StartCountdownButton disabled={isSubmitDisabled} type="submit">
-            <Play size={24} />
-            Começar
-          </StartCountdownButton>
-        )}
+        <CountdownWrapper
+          // variants={countdownWrapperVariants}
+          animate={
+            activeCycle
+              ? {
+                  y: -30,
+                  transition: {
+                    duration: 0.5,
+                    delay: 0.5,
+                    ease: [0.43, 0.13, 0.23, 0.96],
+                  },
+                }
+              : {
+                  y: 0,
+                  transition: { duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] },
+                }
+          }
+        >
+          <Countdown />
+
+          {activeCycle ? (
+            <StopCountdownButton onClick={interruptCurrentCycle} type="button">
+              <HandPalm size={24} />
+              Interromper
+            </StopCountdownButton>
+          ) : (
+            <StartCountdownButton disabled={isSubmitDisabled} type="submit">
+              <Play size={24} />
+              Começar
+            </StartCountdownButton>
+          )}
+        </CountdownWrapper>
       </form>
     </HomeContainer>
   )

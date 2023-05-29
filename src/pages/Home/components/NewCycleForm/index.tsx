@@ -5,13 +5,32 @@ import { CyclesContext } from '../../../../contexts/CyclesContext'
 
 import { FormContainer, TaskInput, MinutesAmountInput } from './styles'
 
+const variants = {
+  hide: {
+    y: -10,
+    opacity: 0,
+    transition: {
+      ease: [0.43, 0.13, 0.23, 0.96],
+      duration: 0.5,
+    },
+  },
+  show: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      ease: [0.43, 0.13, 0.23, 0.96],
+      duration: 0.5,
+    },
+  },
+}
+
 export function NewCycleForm() {
   const { activeCycle } = useContext(CyclesContext)
 
   const { register } = useFormContext()
 
   return (
-    <FormContainer>
+    <FormContainer variants={variants} animate={activeCycle ? 'hide' : 'show'}>
       <label htmlFor="task">Vou trabalhar em</label>
       <TaskInput
         type="text"
