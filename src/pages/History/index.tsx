@@ -1,60 +1,13 @@
+import { useContext } from 'react'
+import { formatDistanceToNow } from 'date-fns'
+import ptBR from 'date-fns/locale/pt-BR'
+
+import { CyclesContext } from '../../contexts/CyclesContext'
 import { HistoryContainer, HistoryList, Status } from './styles'
-import { v4 as uuid } from 'uuid'
-
-interface TableDatasType {
-  id: string
-  task: string
-  duration: string
-  createdAt: string
-  status: 'green' | 'yellow' | 'red'
-}
-
-const tableHeads = [
-  { label: 'Tarefa' },
-  { label: 'Duração' },
-  { label: 'Início' },
-  { label: 'Status' },
-]
-
-const tableDatas: TableDatasType[] = [
-  {
-    id: uuid(),
-    task: 'Tarefa 1',
-    duration: '10 minutos',
-    createdAt: 'Há 2 dias',
-    status: 'green',
-  },
-  {
-    id: uuid(),
-    task: 'Tarefa 2',
-    duration: '40 minutos',
-    createdAt: 'Há 1 mês',
-    status: 'yellow',
-  },
-  {
-    id: uuid(),
-    task: 'Tarefa 3',
-    duration: '20 minutos',
-    createdAt: 'Há 5 dias',
-    status: 'green',
-  },
-  {
-    id: uuid(),
-    task: 'Tarefa 4',
-    duration: '15 minutos',
-    createdAt: 'Há 2 meses',
-    status: 'red',
-  },
-  {
-    id: uuid(),
-    task: 'Tarefa 5',
-    duration: '30 minutos',
-    createdAt: 'Há 2 meses',
-    status: 'red',
-  },
-]
 
 export function History() {
+  const { cycles } = useContext(CyclesContext)
+
   return (
     <HistoryContainer
       initial={{
@@ -84,24 +37,34 @@ export function History() {
         <table>
           <thead>
             <tr>
-              {tableHeads.map((head) => {
-                return <th key={head.label}>{head.label}</th>
-              })}
+              <th>Tarefa</th>
+              <th>Duração</th>
+              <th>Início</th>
+              <th>Status</th>
             </tr>
           </thead>
           <tbody>
-            {tableDatas.map((data) => {
+            {cycles.map((cycle) => {
               return (
-                <tr key={data.id}>
-                  <td>{data.task}</td>
-                  <td>{data.duration}</td>
-                  <td>{data.createdAt}</td>
+                <tr key={cycle.id}>
+                  <td>{cycle.task}</td>
+                  <td>{cycle.minutesAmount} minutos</td>
                   <td>
-                    <Status statusColor={data.status}>
-                      {data.status === 'green' && 'Concluído'}
-                      {data.status === 'yellow' && 'Em andamento'}
-                      {data.status === 'red' && 'Interrompido'}
-                    </Status>
+                    {formatDistanceToNow(cycle.startDate, {
+                      locale: ptBR,
+                      addSuffix: true,
+                    })}
+                  </td>
+                  <td>
+                    {cycle.finishedDate && (
+                      <Status statusColor="green">Concluído</Status>
+                    )}
+                    {cycle.interruptedDate && (
+                      <Status statusColor="red">Interrompido</Status>
+                    )}
+                    {!cycle.finishedDate && !cycle.interruptedDate && (
+                      <Status statusColor="yellow">Em andamento</Status>
+                    )}
                   </td>
                 </tr>
               )
